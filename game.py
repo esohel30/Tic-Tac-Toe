@@ -26,6 +26,25 @@ def play_turn(position):
 
 # neat algorithms needed
 def check_win(): 
-    for x in 
+    # check rows 
+    for i in range(0, 7, 3):
+        if board[i] == board[i + 1] == board[i + 2]:
+            return True
+    # check columns 
+    for i in range(3):
+        if board[i] == board[i + 3] == board[i + 6]:
+            return True
+    # check diagonals 
+    if board[0] == board[4] == board[8]:
+        return True 
+    if board[2] == board[4] == board[6]:
+        return True 
+    
+    return False
+    
 
 
+check_win()
+# 0 1 2 
+# 3 4 5 
+# 6 7 8 
