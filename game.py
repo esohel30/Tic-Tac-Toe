@@ -44,9 +44,16 @@ def check_win():
     
 
 def play_game():
-    while not check_win: 
-        display_board()
+    global current_player
+    display_board()
+    while not check_win(): 
         turn = int(input())
+        play_turn(turn)
+    if current_player == 'X':
+        current_player = 'O'
+    else: 
+        current_player = 'X'
+    print(current_player + " Won!")
         
 play_game()
     
