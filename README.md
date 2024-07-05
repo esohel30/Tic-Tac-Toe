@@ -1,1 +1,3 @@
-Simple Warm Up Project to get ball rolling. 
+# Tic-Tac-Toe
+
+A simple command-line Tic-Tac-Toe game implemented in Python.
