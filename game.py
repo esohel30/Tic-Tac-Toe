@@ -28,23 +28,25 @@ def play_turn(position):
 def check_win(): 
     # check rows 
     for i in range(0, 7, 3):
-        if board[i] == board[i + 1] == board[i + 2]:
+        if board[i] == board[i + 1] == board[i + 2] and board[i] in ("X", "Y"):
             return True
     # check columns 
     for i in range(3):
-        if board[i] == board[i + 3] == board[i + 6]:
+        if board[i] == board[i + 3] == board[i + 6] and board[i] in ("X", "Y"):
             return True
     # check diagonals 
-    if board[0] == board[4] == board[8]:
+    if board[0] == board[4] == board[8] and board[0] in ("X", "Y"):
         return True 
-    if board[2] == board[4] == board[6]:
+    if board[2] == board[4] == board[6] and board[2] in ("X", "Y"):
         return True 
     
     return False
     
 
-
-check_win()
-# 0 1 2 
-# 3 4 5 
-# 6 7 8 
+def play_game():
+    while not check_win: 
+        display_board()
+        turn = int(input())
+        
+play_game()
+    
